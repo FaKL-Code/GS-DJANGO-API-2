@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+<h1>Detalhes</h1>
+
+<ul>
+  <li><b>Volume:</b> {{ object.volume }}</li>
+  <li>
+    <b>Retirado?</b>
+    {% if object.is_done %}
+    <i class="fa fa-check-circle ok"></i>
+    {% else %}
+    <i class="fa fa-times-circle no"></i>
+    {% endif %}
+  </li>
+  <li><b>Criado em:</b> {{ object.created|date:'d/m/Y'|default:'---' }}</li>
+</ul>
+{% endblock content %}
